@@ -6,9 +6,11 @@ import { MyContext } from './Context/MyContext'
 import { createBrowserRouter, RouterProvider} from 'react-router-dom'
 import Pacientes from './pages/Pacientes'
 import PaginaPaciente from './pages/PaginaPaciente'
+import Calendario from './pages/Calendario'
 
 const router = createBrowserRouter([
   {path:'/', element:<Pacientes/>},
+  {path:'/calendario', element:<Calendario/>},
   {path:'/paciente/:id', element:<PaginaPaciente/>}
   
 ])

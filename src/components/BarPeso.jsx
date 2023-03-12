@@ -9,7 +9,7 @@ import OrneContext from '../Context/MyContext';
     const {controles} = useContext(OrneContext)
     const chartContainer = useRef(null);
     const chart = useRef(null);
-    const [lastMonthWeight, setLastMonthWeight] = useState(null);
+    const [lastMonthWeight, setLastMonthWeight] = useState({ current: null });
   
     useEffect(() => {
       if (chart.current) {
@@ -79,7 +79,7 @@ import OrneContext from '../Context/MyContext';
   
     return <canvas ref={chartContainer} />
   
-    return <canvas ref={chartContainer} />;
+
   };
   
   export default BarPeso;

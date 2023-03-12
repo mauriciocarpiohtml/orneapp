@@ -5,6 +5,7 @@ import OrneContext from '../Context/MyContext'
 import { useContext } from 'react'
 import Buscador from '../components/Buscador'
 import PacienteCard from '../components/PacienteCard'
+import Sidebar from '../components/Sidebar'
 
 function Pacientes() {
     // aca se van a mostrar la lista de todos los pacientes 
@@ -26,24 +27,29 @@ function Pacientes() {
     pacientesFiltrados = pacientes
   }
 
-  return (
-    <>
-      <div className='mt-5 p-5'>
-        <h3 className='text-indigo-600 font-bold text-3xl text-center uppercase'>Pacientes Ornella Musolino</h3>
-      </div>
-      <Buscador/>
-      {mostrarFormulario &&  <Formulario/>}
-        <div className='w-[85%] mx-auto mt-5 p-3 flex flex-wrap gap-5'>
-            {pacientesFiltrados.map((paciente => 
-                                    <PacienteCard
-                                    key={paciente.id}
-                                    paciente={paciente}/>))}
+  
+    return (
+      <>
+    <div className='flex'>
+        <div className='md:w-[20%]'>
+          <Sidebar />
         </div>
-        
-      <BotonAgregar/>
+        <div className='md:w-[80%] ml-auto mr-auto'>
+          <div className='mt-8 md:mt-5 p-5'>
+            <h3 className='text-indigo-600 font-bold text-3xl text-center uppercase'>Pacientes Ornella Musolino</h3>
+          </div>
+          <Buscador />
+          {mostrarFormulario && <Formulario />}
+          <div className='w-full mt-5 p-3 flex flex-wrap gap-5'>
+            {pacientesFiltrados.map(paciente => (
+              <PacienteCard key={paciente.id} paciente={paciente} />
+            ))}
+          </div>
+          <BotonAgregar />
+        </div>
+    </div>
     </>
-    
-  )
+    )
 }
 
 export default Pacientes

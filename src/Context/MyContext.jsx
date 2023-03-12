@@ -6,7 +6,7 @@ const OrneContext = createContext()
 function MyContext({children}) {
 
   // estados pagina de añadir
-    const [pacientes, setPacientes] = useState([])
+    const [pacientes, setPacientes] = useState([{control: 1, fecha:'23-06-2022', nombre:'Mauricio', apellido:'Carpio', telefono:1127888971, pesoActual:65, brazoRelajado:45, brazoTension:48 , id:456}])
     const [mostrarFormulario, setMostrarFormulario] = useState(false)
     const [pacienteBuscado, setPacienteBuscado] = useState('')
    
